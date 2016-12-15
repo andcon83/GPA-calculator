@@ -1,10 +1,12 @@
 .year{
     text-align:center;
     border: solid black;
+
 }
 
 .year h3{
-    font-size:1.2em;    
+    font-size:1.2em;
+    color:orange;
 }
 
 .year h5{
@@ -23,4 +25,8 @@
 
 .input-field label{
     font-size:0.4em;
+}
+
+h1 .orange{
+    color:orange;
 }
