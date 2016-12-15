@@ -1,19 +1,782 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>title</title>
-    <link rel="stylesheet" href="css/style.css">
-  <body>
-    <h1>Welcome to the Klossy Kalculator!</h1>
-    <form method="post" action="/calculate">
-      <h3> What is your first number?</h3>
-      <input type="text" name="num1">
-      <h3> What is your second number?</h3>
-      <input type="text" name="num2">
-      <h1>What is your birthday? Please enter in the form mm/dd/yyyy</h1>
-      <input type="text" name="birthday">
-      <input type="submit">
+    <link rel="stylesheet" href="style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    
+
+</head>
+
+<body>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+   
+    <div>
+        <h1 id="welcome">Welcome to the GPA Calculator!</h1>
+    </div>
+        <form method="post" action="/calculate">
+        <div class="row">
+            <div class="year col m6">
+                <h3>Please enter your grade out of 100 and the number of credits (1 or 0.5) it was worth for each class in your <strong>freshman</strong> year.</h3>
+                <div class="row">
+                    <div class="input-field col m5">
+                        <input type="text" name="sg1" id="sg1">
+                        <label for="sg1">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc1" id="sc1a" value=1>
+                        <label for="sc1a">1</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc1" id="sc1b" value=0.5>
+                        <label for="sc1b">0.5</label>
+                    </div>
+                    <div class="weighted col m2">
+                        <input type="checkbox" name="sw1" id="sw1" value="yes">
+                        <label for="sw1">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m5 input-field">
+                        <input type="text" name="sg2">
+                        <label for="sg2">Grade</label>
+                    </div>
+                     <div class="credit col m2">
+                        <input type="radio" name="sc2" id="sc2a" value=1>
+                        <label for="sc2a">1</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc2" id="sc2b" value=0.5>
+                        <label for="sc2b">0.5</label>
+                    </div>
+                    <div class="weighted col m2">
+                        <input type="checkbox" name="sw2" id="sw2" value="yes">
+                        <label for="sw2">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg3">
+                        <label for="sg3">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc3" id="sc3a" value=1>
+                        <label for="sc3a">1</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc3" id="sc3b" value=0.5>
+                        <label for="sc3b">0.5</label>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw3" id="sw3" value="yes">
+                        <label for="sw3">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg4">
+                        <label for="sg4">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc4" id="sc4a" value=1>
+                        <label for="sc4a">1</label>
+                    </div>
+                    <div class="credit col m2">
+                        <input type="radio" name="sc4" id="sc4b" value=0.5>
+                        <label for="sc4b">0.5</label>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw4" id="sw4" value="yes">
+                        <label for="sw4">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg5" id="sg5">
+                        <label for="sg5">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" id="sc5a" name="sc5" value=1>
+                        <label for="sc5a">1</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc5" id="sc5b" value=0.5>
+                        <label for="sc5b">0.5</label>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw5" id="sw5" value="yes">
+                        <label for="sw5">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg6">
+                        <label for="sg6">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc6" id="sc6a" value=1>
+                        <label for="sc6a">1</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" id="sc6b" name="sc6" value=0.5>
+                        <label for="sc6b">0.5</label>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw6" id="sw6" value="yes">
+                        <label for="sw6">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg7">
+                        <label for="sg7">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc7" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc7" value=0.5>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw7" id="sw7" value="yes">
+                        <label for="sw7">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg8">
+                        <label for="sg8">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc8" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="s8" value=0.5>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw8" id="sw8" value="yes">
+                        <label for="sw8">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg9">
+                        <label for="sg9">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc9" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc9" value=0.5>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw9" id="sw9" value="yes">
+                        <label for="sw9">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg10">
+                        <label for="sg10">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc10" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc10" value=0.5>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw10" id="sw10" value="yes">
+                        <label for="sw10">Weighted?</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="sg11">
+                        <label for="sg11">Grade</label>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc11" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="sc11" value=0.5>
+                    </div>
+                      <div class="weighted col m2">
+                        <input type="checkbox" name="sw11" id="sw11" value="yes">
+                        <label for="sw11">Weighted?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="year col m6">
+                <h3>Please enter your grade out of 100 and the number of credits (1 or 0.5) it was worth for each class in your sophomore year.</h3>
+                <div class="row">
+                    <div class="col m8 labels">
+                        <h5>Grade</h5>
+                    </div>
+                    <div class="col m4 labels">
+                        <h5>Credit</h5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg1">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc1" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc1" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg2">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc2" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc2" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m8 input-field labels">
+                        <h5>Grade</h5>
+                    </div>
+                    <div class="col m4 labels">
+                        <h5>Credit</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m8">
+                        <br>
+                        <input type="text" name="fg3">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc3" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc3" value=0.5>
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg4">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc4" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc4" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg5">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc5" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc5" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg6">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc6" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc6" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg7">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc7" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc7" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m8 labels">
+                        <h5>Grade</h5>
+                    </div>
+                    <div class="col m4 labels">
+                        <h5>Credit</h5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg8">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc8" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="f8" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m8 labels">
+                        <h5>Grade</h5>
+                    </div>
+                    <div class="col m4 labels">
+                        <h5>Credit</h5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg9">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc9" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc9" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m8 labels">
+                        <h5>Grade</h5>
+                    </div>
+                    <div class="col m4 labels">
+                        <h5>Credit</h5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg10">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc10" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc10" value=0.5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m8 labels">
+                        <h5>Grade</h5>
+                    </div>
+                    <div class="col m4 labels">
+                        <h5>Credit</h5>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col m5 input-field">
+                        <input type="text" name="fg11">
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc11" value=1>
+                    </div>
+                    <div class="credit col m2">
+                         
+                        <input type="radio" name="fc11" value=0.5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="year col m6">
+                    <h3>Please enter your grade out of 100 and the number of credits (1 or 0.5) it was worth for each class in your junior year.</h3>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg1">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc1" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc1" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8">
+                            <br>
+                            <input type="text" name="jg2">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc2" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc2" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg3">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc3" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc3" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg4">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc4" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc4" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg5">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc5" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc5" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg6">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc6" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc6" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg7">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc7" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc7" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg8">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc8" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="j8" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg9">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc9" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc9" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg10">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc10" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc10" value=0.5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col m8 input-field">
+                            <br>
+                            <input type="text" name="jg11">
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc11" value=1>
+                        </div>
+                        <div class="credit col m2">
+                             
+                            <input type="radio" name="jc11" value=0.5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="year">
+            <h3>Please enter your grade out of 100 and the number of credits (1 or 0.5) it was worth for each class in your senior year.</h3>
+
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg1">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec1" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec1" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg2">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec2" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec2" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg3">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec3" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec3" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg4">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec4" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec4" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg5">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec5" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec5" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg6">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec6" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec6" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg7">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec7" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec7" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg8">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec8" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="se8" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg9">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec9" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec9" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg10">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec10" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec10" value=0.5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col m8 input-field">
+                    <br>
+                    <input type="text" name="seg11">
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec11" value=1>
+                </div>
+                <div class="credit col m2">
+                     
+                    <input type="radio" name="sec11" value=0.5>
+                </div>
+            </div>
+        </div>
+        <div id="button">
+            <input type="submit">
+        </div>
     </form>
-  </body>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>    
+</body>
+
 </html>

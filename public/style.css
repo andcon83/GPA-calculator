@@ -1,0 +1,26 @@
+.year{
+    text-align:center;
+    border: solid black;
+}
+
+.year h3{
+    font-size:1.2em;    
+}
+
+.year h5{
+    font-size:1.0em;    
+}
+
+#button{
+    width:20%;
+    margin-left:40%;
+    text-align:center;
+}
+
+#welcome{
+    text-align:center;
+}
+
+.input-field label{
+    font-size:0.4em;
+}

@@ -1,99 +1,52 @@
-#basic calculator
-def add(number1, number2)
-  number1+number2
-end
-
-#define a new method called multiply. define @product inside of your application controller
-
-
-#life calculator
-def years_alive(birthday)
-  #days in the months array
-  days_in_months=[31,28,31,30,31,30,31,31,30,31,30,31]
-  
-  #current date 
-  the_time=Time.now.to_s.split(" ")
-  date=the_time[0].split("-")
- 
-  #save each part of the date as a separate variable
-  year=date[0].to_f
-  month=date[1].to_f
-  day=date[2].to_f
- 
-  #person's date
-  user_date=birthday.split("/")
-  user_year=user_date[2].to_f
-  user_month=user_date[0].to_f
-  user_day=user_date[1].to_f
-
-  #additional days to years_age(years_age is expressed in days)
-  i=0 #counter
-  extra_days=0
-  days_in_months.each do |days|
-  i+=1
-     if i < month
-        extra_days+=days
-     end
-  end
-  
-  #people who haven't had their birthday yet this year
-  if user_month > month || (user_month==month && user_day > day)
-    years_age = (year - user_year - 1)*365
-    k=0
-    more_days=0
-    days_in_months.each do |days|
-      k+=1
-      if k > user_month
-        more_days+=days
-      end
-    end
-    days_age = extra_days+day+more_days+days_in_months[user_month-1]-user_day
-  #people who have had their birthday this year
-  else 
-    years_age=(year - user_year)*365
-    j=0
-    less_days=0
-    subtract_days=days_in_months.each do |month|
-      j+=1
-      if user_month > j 
-        less_days+=month
-      end
-    end
-    days_age=extra_days+day-less_days-user_day
-    puts days_age
-  end
- #factoring in leap years
- leap_years=((years_age/4)/365).floor
-  #total of everything
- days_age+years_age+leap_years
-end
-
-
-
-def klossify(phrase)
-  phrase.gsub("c","k").gsub("C","K")
-end
-
-
- def piglatinize(word)
-    non_pig_latin_words = ["i", "me", "to", "too", "a", "an", "in", "and", "on"]
-    vowels = ["a", "e", "i", "o", "u"]
- 
-      if non_pig_latin_words.include?(word)
-        word
-       elsif vowels.include? word[0]
-        word << "ay"
-       else
-         consonants = ""
-       while !vowels.include?(word[0])
-         consonants << word[0]
-         word = word.split("")[1..-1].join
-       end
-       word + consonants + 'ay'
+def f_gpa(f_hash)
+  f_total=0
+  c_total=0
+  f_hash.each do |array|
+    if array[0]>96.9
+      f_total+=4.33*array[1]
+      c_total+=array[1]
+    elsif array[0]>92.9
+      f_total+=4.0*array[1]
+      c_total+=array[1]
+    elsif array[0]>89.9
+      f_total+=3.67*array[1]
+      c_total+=array[1]
+    elsif array[0]>86.9
+      f_total+=3.33*array[1]
+      c_total+=array[1]
+    elsif array[0]>82.9
+      f_total+=3.0*array[1]
+      c_total+=array[1]
+    elsif array[0]>79.9
+      f_total+=2.67*array[1]
+      c_total+=array[1]
+    elsif array[0]>76.9
+      f_total+=2.33*array[1]
+      c_total+=array[1]
+    elsif array[0]>72.9
+      f_total+=2.0*array[1]
+      c_total+=array[1]
+    elsif array[0]>69.9
+      f_total+=1.67*array[1]
+      c_total+=array[1]
+    else
+      c_total+=array[1]
    end
- end
- 
+  end
+  f_total/c_total
+end
 
- def to_pig_latin(string)
-   string.split.collect{|word| piglatinize(word)}.join(" ")
- end
+
+def k_gpa(arr)
+  f_total=0
+  c_total=0
+  arr.each do |array|
+    if array[0]>70
+      f_total+=4-(0.1*(100-array[0]))
+      c_total+=array[1]
+    else
+      c_total+=array[1]
+    end
+  end
+  f_total/c_total
+end
