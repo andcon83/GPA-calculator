@@ -41,7 +41,7 @@ def k_gpa(arr)
   f_total=0
   c_total=0
   arr.each do |array|
-    if array[0]>70
+    if array[0]>69.9
       f_total+=(4-(0.1*(100-array[0])))*array[1]
       c_total+=array[1]
     else
